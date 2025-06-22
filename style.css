@@ -71,12 +71,12 @@ nav a:hover {
     color: #1a1a1a;
 }
 
-/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z NOWYM TŁEM) --- */
+/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z TWOIM WŁASNYM TŁEM) --- */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    /* NAPRAWIONY LINK DO TŁA */
-    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://i.imgur.com/g0t6FvN.jpg') no-repeat center center/cover;
+    /* TWOJE WŁASNE TŁO USTAWIONE PONIŻEJ */
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://i.imgur.com/UfJ4hWJ.jpeg') no-repeat center center/cover;
 }
 .hero p {
     font-size: 1.3em;
