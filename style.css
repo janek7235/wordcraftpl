@@ -157,7 +157,6 @@ nav a:hover {
 .ranga-card h3 {
     margin-top: 0;
     font-size: 2em;
-    color: #ffaa00;
 }
 .ranga-card .cena {
     font-size: 2.5em;
@@ -174,6 +173,29 @@ nav a:hover {
     margin-top: 20px;
     display: block;
 }
+
+/* --- STYLE DLA POLA NA NICK W CENNIKU --- */
+.nick-input-wrapper {
+    margin-bottom: 20px;
+}
+
+.nick-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 2px solid #555;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box; /* Ważne, aby padding nie powiększał pola */
+    transition: border-color 0.3s;
+}
+
+.nick-input:focus {
+    border-color: #ffaa00;
+    outline: none;
+}
+
 
 /* --- RESPONSOWNOŚĆ --- */
 @media (max-width: 768px) {
