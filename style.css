@@ -15,6 +15,11 @@ body {
     padding: 0 20px;
 }
 
+/* Dostosowanie dla stron innych niż główna, aby treść nie chowała się pod menu */
+main.container {
+    padding-top: 100px;
+}
+
 h1 {
     color: #ffaa00;
     text-align: center;
@@ -38,12 +43,18 @@ p {
 
 /* --- NAGŁÓWEK I NAWIGACJA (wspólne dla wszystkich stron) --- */
 header {
-    background-color: #222;
+    background-color: #1f1f1f;
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #ffaa00;
+    position: fixed; /* Przyklejony na górze */
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box; /* Ważne przy `width: 100%` i paddingu */
+    z-index: 100;
 }
 
 .logo {
@@ -74,9 +85,14 @@ nav a:hover {
 /* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z TWOIM WŁASNYM TŁEM) --- */
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
     /* TWOJE WŁASNE TŁO USTAWIONE PONIŻEJ */
-    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://i.imgur.com/UfJ4hWJ.jpeg') no-repeat center center/cover;
+    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://i.imgur.com/UfJ4hWJ.jpeg') no-repeat center center/cover;
 }
 .hero p {
     font-size: 1.3em;
