@@ -1,0 +1,196 @@
+/* Plik: style.css */
+
+/* --- RESET I GŁÓWNE STYLE --- */
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #ffaa00;
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ffaa00;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+/* --- NAGŁÓWEK I NAWIGACJA (wspólne dla wszystkich stron) --- */
+header {
+    background-color: #222;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #ffaa00;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+.logo span {
+    color: #ffaa00;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-left: 25px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ffaa00;
+    color: #1a1a1a;
+}
+
+/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ --- */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://i.imgur.com/kS5A5fM.jpeg') no-repeat center center/cover; /* Przykładowe tło */
+}
+.hero p {
+    font-size: 1.3em;
+    max-width: 600px;
+    margin: 20px auto 40px auto;
+}
+.ip-box {
+    background-color: #0e0e0e;
+    padding: 15px 25px;
+    border: 2px dashed #ffaa00;
+    display: inline-block;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.ip-box p {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+.przycisk-glowny {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #ffaa00;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.przycisk-glowny:hover {
+    background-color: #ffc107;
+    transform: scale(1.05);
+}
+
+/* --- REGULAMIN (strona regulamin.html) --- */
+.regulamin-sekcja {
+    background-color: #262626;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border-left: 5px solid #ffaa00;
+}
+.regulamin-sekcja h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: #fff;
+}
+.regulamin-sekcja ol {
+    padding-left: 20px;
+}
+.regulamin-sekcja li {
+    padding: 5px 0;
+}
+
+
+/* --- CENNIK (strona cennik.html) --- */
+.cennik-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Automatyczne dopasowanie kolumn */
+    gap: 30px;
+}
+.ranga-card {
+    background-color: #262626;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.ranga-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 170, 0, 0.2);
+}
+.ranga-card h3 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #ffaa00;
+}
+.ranga-card .cena {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+.ranga-card .cena span {
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #bbb;
+}
+.przycisk-kupna {
+    margin-top: 20px;
+    display: block; /* Rozciąga się na całą szerokość karty */
+}
+
+/* --- RESPONSOWNOŚĆ --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+    nav {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav a {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
