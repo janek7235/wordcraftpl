@@ -71,11 +71,12 @@ nav a:hover {
     color: #1a1a1a;
 }
 
-/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ --- */
+/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z NOWYM TŁEM) --- */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://i.imgur.com/kS5A5fM.jpeg') no-repeat center center/cover;
+    /* NAPRAWIONY LINK DO TŁA */
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://i.imgur.com/g0t6FvN.jpg') no-repeat center center/cover;
 }
 .hero p {
     font-size: 1.3em;
@@ -106,6 +107,7 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
 }
 .przycisk-glowny:hover {
     background-color: #ffc107;
@@ -169,35 +171,126 @@ nav a:hover {
     font-weight: normal;
     color: #bbb;
 }
-.przycisk-kupna {
+.open-modal-button {
     margin-top: 20px;
-    display: block;
 }
 
-/* --- STYLE DLA POLA NA NICK W CENNIKU --- */
+
+/* --- STYLE DLA PÓL NA NICK W CENNIKU I OKNIE --- */
 .nick-input-wrapper {
-    margin-bottom: 20px;
+    position: relative;
 }
-
+.nick-input-wrapper:first-of-type {
+    margin-bottom: 10px;
+}
+.nick-input-wrapper::before {
+    content: '👤';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 1.2em;
+}
+.nick-input-wrapper.discord::before {
+    content: '💬';
+    font-size: 1.1em;
+}
 .nick-input {
     width: 100%;
-    padding: 12px;
-    background-color: #1a1a1a;
-    border: 2px solid #555;
-    border-radius: 5px;
-    color: #e0e0e0;
-    font-size: 1em;
-    box-sizing: border-box; /* Ważne, aby padding nie powiększał pola */
-    transition: border-color 0.3s;
+    box-sizing: border-box;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border: 2px solid #444;
+    border-radius: 6px;
+    padding: 14px 14px 14px 50px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: left;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 .nick-input:focus {
-    border-color: #ffaa00;
     outline: none;
+    border-color: #ffaa00;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+.nick-input::placeholder {
+    color: #777;
+    font-weight: normal;
+    opacity: 1;
+}
+
+/* --- STYLE DLA OKNA MODALNEGO --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+.modal-content {
+    background-color: #262626;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #555;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    position: relative;
+    text-align: center;
+}
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.close-modal:hover,
+.close-modal:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-content h2 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.modal-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+.modal-price span {
+    color: #ffaa00;
+}
+.modal-buttons-wrapper a {
+    margin-top: 10px;
+    display: block;
+    text-decoration: none;
+}
+.modal-buttons-wrapper a:first-of-type {
+    margin-top: 25px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 
-/* --- RESPONSOWNOŚĆ --- */
+/* --- RESPONSOWNOŚĆ (DLA TELEFONÓW) --- */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -215,124 +308,4 @@ nav a:hover {
         width: 100%;
         text-align: center;
     }
-}
-/* --- STYLE DLA POLA NA NICK W CENNIKU --- */
-.nick-input-wrapper {
-    margin-bottom: 20px;
-}
-
-.nick-input {
-    width: 100%;
-    padding: 12px;
-    background-color: #1a1a1a;
-    border: 2px solid #555;
-    border-radius: 5px;
-    color: #e0e0e0;
-    font-size: 1em;
-    box-sizing: border-box; /* Ważne, aby padding nie powiększał pola */
-    transition: border-color 0.3s;
-}
-
-.nick-input:focus {
-    border-color: #ffaa00;
-    outline: none;
-}
-/* Plik: style.css - DODAJ TE STYLE NA SAMYM KOŃCU PLIKU */
-
-/* Dodatkowa ikona dla pola Discord */
-.nick-input-wrapper.discord::before {
-    content: '💬'; /* Ikona chmurki/czatu pasująca do Discorda */
-    font-size: 1.1em;
-}
-
-/* Mały odstęp między polami na nick */
-.ranga-card .nick-input-wrapper:first-of-type {
-    margin-bottom: 10px; 
-}
-/* Plik: style.css - DODAJ TEN BLOK NA SAMYM KOŃCU */
-
-/* --- STYLE DLA OKNA MODALNEGO --- */
-
-/* Tło za oknem (przyciemnienie) */
-.modal-overlay {
-    display: none; /* Domyślnie ukryte */
-    position: fixed; /* Zawsze na wierzchu i na środku ekranu */
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.85); /* Mocne przyciemnienie */
-    
-    /* Centrowanie zawartości */
-    justify-content: center;
-    align-items: center;
-
-    /* Animacja pojawiania się */
-    animation: fadeIn 0.3s ease;
-}
-
-/* Właściwe okno modalne */
-.modal-content {
-    background-color: #262626;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #555;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    position: relative;
-    text-align: center;
-}
-
-/* Przycisk zamknięcia "X" */
-.close-modal {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Style dla tekstu wewnątrz okna */
-.modal-content h2 {
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-.modal-price {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ccc;
-    margin-bottom: 25px;
-}
-.modal-price span {
-    color: #ffaa00;
-}
-
-/* Style dla przycisków w oknie */
-.modal-buttons-wrapper a {
-    margin-top: 10px; /* Zwiększamy odstęp */
-    display: block; /* Każdy przycisk w nowej linii */
-    text-decoration: none;
-}
-.modal-buttons-wrapper a:first-child {
-    margin-top: 25px;
-}
-
-/* Animacja pojawiania się tła */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
