@@ -216,3 +216,24 @@ nav a:hover {
         text-align: center;
     }
 }
+/* --- STYLE DLA POLA NA NICK W CENNIKU --- */
+.nick-input-wrapper {
+    margin-bottom: 20px;
+}
+
+.nick-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 2px solid #555;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1em;
+    box-sizing: border-box; /* Ważne, aby padding nie powiększał pola */
+    transition: border-color 0.3s;
+}
+
+.nick-input:focus {
+    border-color: #ffaa00;
+    outline: none;
+}
