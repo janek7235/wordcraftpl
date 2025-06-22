@@ -237,3 +237,15 @@ nav a:hover {
     border-color: #ffaa00;
     outline: none;
 }
+/* Plik: style.css - DODAJ TE STYLE NA SAMYM KOŃCU PLIKU */
+
+/* Dodatkowa ikona dla pola Discord */
+.nick-input-wrapper.discord::before {
+    content: '💬'; /* Ikona chmurki/czatu pasująca do Discorda */
+    font-size: 1.1em;
+}
+
+/* Mały odstęp między polami na nick */
+.ranga-card .nick-input-wrapper:first-of-type {
+    margin-bottom: 10px; 
+}
