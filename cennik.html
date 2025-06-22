@@ -21,133 +21,153 @@
     <main class="container">
         <h2>Cennik Rang i Usług</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
-            Dziękujemy za chęć wsparcia naszego serwera! Płatności PayPal są częściowo zautomatyzowane (automatyczne powiadomienie), a inne metody płatności ustalane są indywidualnie na Discordzie. Po zaksięgowaniu płatności ranga zostanie nadana ręcznie.
+            Dziękujemy za chęć wsparcia naszego serwera! **Wpisz swój nick z gry w odpowiednie pole**, a następnie wybierz metodę płatności. Po zaksięgowaniu płatności ranga zostanie nadana ręcznie.
         </p>
 
         <div class="cennik-wrapper">
-            <!-- Ranga VIP -->
+
+            <!-- KARTA Z PRODUKTEM: VIP -->
             <div class="ranga-card">
-                <h3 style="color: #4CAF50;">VIP</h3>
-                <div class="cena">5<span>.00 PLN</span></div>
-                <p>Podstawowe korzyści i dostęp do /kit vip!</p>
-                <!-- Przycisk PayPal -->
-                <a href="https://www.paypal.com/paypalme/janek7235/5" target="_blank" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
-                <!-- Przycisk Inne metody -->
-                <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Kup Teraz (Inna metoda)</a>
+                <div> <!-- Dodatkowy div do grupowania góry karty -->
+                    <h3 style="color: #4CAF50;">VIP</h3>
+                    <div class="cena">5<span>.00 PLN</span></div>
+                    <p>Podstawowe korzyści i dostęp do /kit vip!</p>
+                </div>
+                <div> <!-- Dodatkowy div do grupowania dołu karty -->
+                    <div class="nick-input-wrapper">
+                        <input type="text" class="nick-input" placeholder="Twój nick z gry..." required>
+                    </div>
+                    <a href="https://www.paypal.com/paypalme/janek7235/5" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
+                    <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Inne metody (Discord)</a>
+                </div>
             </div>
 
-            <!-- Ranga SVIP -->
+            <!-- KARTA Z PRODUKTEM: SVIP -->
             <div class="ranga-card">
-                <h3 style="color: #ffc700;">SVIP</h3>
-                <div class="cena">10<span>.00 PLN</span></div>
-                <p>Wszystko z VIP oraz dodatkowe komendy!</p>
-                <a href="https://www.paypal.com/paypalme/janek7235/10" target="_blank" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
-                <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Kup Teraz (Inna metoda)</a>
+                <div>
+                    <h3 style="color: #ffc700;">SVIP</h3>
+                    <div class="cena">10<span>.00 PLN</span></div>
+                    <p>Wszystko z VIP oraz dodatkowe komendy!</p>
+                </div>
+                <div>
+                    <div class="nick-input-wrapper">
+                        <input type="text" class="nick-input" placeholder="Twój nick z gry..." required>
+                    </div>
+                    <a href="https://www.paypal.com/paypalme/janek7235/10" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
+                    <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Inne metody (Discord)</a>
+                </div>
             </div>
             
-            <!-- Ranga MVIP -->
+            <!-- KARTA Z PRODUKTEM: MVIP -->
             <div class="ranga-card">
-                <h3 style="color: #4af5b5;">MVIP</h3>
-                <div class="cena">15<span>.00 PLN</span></div>
-                <p>Wszystko z SVIP, dostęp do /fly i więcej!</p>
-                <a href="https://www.paypal.com/paypalme/janek7235/15" target="_blank" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
-                <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Kup Teraz (Inna metoda)</a>
+                <div>
+                    <h3 style="color: #4af5b5;">MVIP</h3>
+                    <div class="cena">15<span>.00 PLN</span></div>
+                    <p>Wszystko z SVIP, dostęp do /fly i więcej!</p>
+                </div>
+                <div>
+                    <div class="nick-input-wrapper">
+                        <input type="text" class="nick-input" placeholder="Twój nick z gry..." required>
+                    </div>
+                    <a href="https://www.paypal.com/paypalme/janek7235/15" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
+                    <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Inne metody (Discord)</a>
+                </div>
             </div>
             
-            <!-- Ranga Sponsor -->
+            <!-- KARTA Z PRODUKTEM: Sponsor -->
             <div class="ranga-card">
-                <h3 style="color: #3498db;">Sponsor</h3>
-                <div class="cena">25<span>.00 PLN</span></div>
-                <p>Potężna ranga z unikalnymi benefitami!</p>
-                <a href="https://www.paypal.com/paypalme/janek7235/25" target="_blank" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
-                <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Kup Teraz (Inna metoda)</a>
+                <div>
+                    <h3 style="color: #3498db;">Sponsor</h3>
+                    <div class="cena">25<span>.00 PLN</span></div>
+                    <p>Potężna ranga z unikalnymi benefitami!</p>
+                </div>
+                <div>
+                    <div class="nick-input-wrapper">
+                        <input type="text" class="nick-input" placeholder="Twój nick z gry..." required>
+                    </div>
+                    <a href="https://www.paypal.com/paypalme/janek7235/25" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
+                    <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Inne metody (Discord)</a>
+                </div>
             </div>
             
-            <!-- Ranga Sigma -->
+            <!-- KARTA Z PRODUKTEM: Sigma -->
             <div class="ranga-card">
-                <h3 style="color: #e74c3c;">Sigma</h3>
-                <div class="cena">30<span>.00 PLN</span></div>
-                <p>Najwyższa ranga dla prawdziwych kozaków!</p>
-                <a href="https://www.paypal.com/paypalme/janek7235/30" target="_blank" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
-                <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Kup Teraz (Inna metoda)</a>
+                <div>
+                    <h3 style="color: #e74c3c;">Sigma</h3>
+                    <div class="cena">30<span>.00 PLN</span></div>
+                    <p>Najwyższa ranga dla prawdziwych kozaków!</p>
+                </div>
+                <div>
+                    <div class="nick-input-wrapper">
+                        <input type="text" class="nick-input" placeholder="Twój nick z gry..." required>
+                    </div>
+                    <a href="https://www.paypal.com/paypalme/janek7235/30" class="przycisk-glowny przycisk-kupna">Kup Teraz (PayPal)</a>
+                    <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny przycisk-kupna" style="background-color:#5865F2; margin-top:10px;">Inne metody (Discord)</a>
+                </div>
             </div>
         </div>
     </main>
 
 <script>
-// Ta funkcja uruchomi się po załadowaniu całej strony
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Znajdujemy WSZYSTKIE przyciski, które prowadzą do PayPal
+    // Znajdujemy WSZYSTKIE przyciski PayPal na stronie
     const paypalButtons = document.querySelectorAll('.przycisk-kupna[href*="paypal.com"]');
 
-    // Do każdego przycisku PayPal dodajemy nasłuchiwanie na kliknięcie
     paypalButtons.forEach(button => {
         button.addEventListener('click', (event) => {
+            // ZATRZYMUJEMY domyślną akcję linku (przejście do PayPal)
+            event.preventDefault();
 
-            // To opóźnienie sprawia, że okno PayPal otwiera się natychmiast,
-            // a okienko z pytaniem o nick pojawia się chwilę później.
-            setTimeout(() => {
-                // Pytamy gracza o nick w grze
-                const nickGry = prompt("Dziękujemy! Podaj swój nick z gry, abyśmy wiedzieli komu nadać rangę:");
+            // Znajdujemy najbliższą "kartę" produktu, na której kliknięto przycisk
+            const rangaCard = button.closest('.ranga-card');
+            
+            // W tej karcie znajdujemy pole do wpisania nicku
+            const nickInput = rangaCard.querySelector('.nick-input');
+            const nickGry = nickInput.value.trim(); // Pobieramy wartość i usuwamy puste znaki z początku/końca
 
-                // Jeśli gracz wpisał nick i nie anulował okienka
-                if (nickGry) {
-                    // Pytamy gracza o nick na Discordzie
-                    const nickDiscord = prompt("Dobrze! Teraz podaj swój nick z Discorda (np. 'kowalski#1234') w celu weryfikacji:");
+            // Sprawdzamy, czy gracz wpisał nick
+            if (nickGry === "") {
+                alert("Błąd: Musisz wpisać swój nick z gry w pole powyżej!");
+                nickInput.style.borderColor = '#e74c3c'; // Zaznaczamy pole na czerwono
+                return; // ZATRZYMUJEMY działanie funkcji
+            }
 
-                    if (nickDiscord) {
-                        // Pobieramy dane z karty produktu, na której kliknięto przycisk
-                        const rangaCard = button.closest('.ranga-card');
-                        const ranga = rangaCard.querySelector('h3').textContent;
-                        const cena = rangaCard.querySelector('.cena').textContent.trim();
-                        const metoda = "PayPal";
-    
-                        // Link do Twojego webhooka na Discordzie
-                        const webhookUrl = "https://discord.com/api/webhooks/1386252782649999410/SbwZySOcJL_yK-adPmzdfD1IM6NBxuroQZrfWaoq_3zJhP2xpCfiv5HL_auH1FhX3Wjv";
-    
-                        // Przygotowujemy piękną wiadomość do wysłania na Discorda
-                        const embedData = {
-                            // W to miejsce wstaw ID roli, którą chcesz pingnąć, np. `<@&123456789123456789>`
-                            // Zostawiam puste, jeśli nie chcesz nikogo pingować.
-                            content: ``,
-                            embeds: [{
-                                title: "Nowe zamówienie przez PayPal!",
-                                color: 16758016, // Kolor pomarańczowy
-                                fields: [
-                                    { name: "👤 Nick w Grze", value: "```" + nickGry + "```", inline: true },
-                                    { name: "📞 Nick na Discordzie", value: "```" + nickDiscord + "```", inline: true },
-                                    { name: "💎 Zakupiona Ranga", value: ranga, inline: false },
-                                    { name: "💳 Metoda Płatności", value: metoda, inline: true },
-                                    { name: "💰 Cena", value: cena, inline: true }
-                                ],
-                                footer: {
-                                    text: "WordCraftPL - Powiadomienie o Płatności"
-                                },
-                                timestamp: new Date()
-                            }]
-                        };
-    
-                        // Wysyłamy dane do webhooka
-                        fetch(webhookUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(embedData)
-                        });
-                        
-                        // Informujemy gracza, że wszystko poszło pomyślnie
-                        alert("Dziękujemy! Twoje zamówienie zostało przekazane administracji. Ranga zostanie nadana wkrótce po zaksięgowaniu płatności.");
-                    } else {
-                        alert("Anulowano. Nick na Discordzie jest wymagany do weryfikacji.");
-                    }
-                } else {
-                    alert("Anulowano. Nick w grze jest wymagany, abyśmy mogli nadać rangę.");
-                }
+            // Jeśli wszystko jest ok, resetujemy kolor ramki (gdyby wcześniej był błąd)
+            nickInput.style.borderColor = '#555';
 
-            }, 500); // 500 milisekund (pół sekundy) opóźnienia
+            // Wszystkie dane są gotowe, więc wysyłamy powiadomienie
+            const ranga = rangaCard.querySelector('h3').textContent;
+            const cena = rangaCard.querySelector('.cena').textContent.trim();
+            const webhookUrl = "https://discord.com/api/webhooks/1386252782649999410/SbwZySOcJL_yK-adPmzdfD1IM6NBxuroQZrfWaoq_3zJhP2xpCfiv5HL_auH1FhX3Wjv";
+
+            const embedData = {
+                embeds: [{
+                    title: "Nowe zamówienie przez PayPal!",
+                    color: 16758016, // pomarańczowy
+                    fields: [
+                        { name: "👤 Nick w Grze", value: "```" + nickGry + "```", inline: false },
+                        { name: "💎 Zakupiona Ranga", value: ranga, inline: true },
+                        { name: "💰 Cena", value: cena, inline: true }
+                    ],
+                    footer: { text: "WordCraftPL - Powiadomienie o Płatności" },
+                    timestamp: new Date()
+                }]
+            };
+
+            // Wysyłamy dane na Discorda
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(embedData)
+            });
+
+            // Informujemy gracza o sukcesie
+            alert("Dziękujemy! Powiadomienie zostało wysłane do administracji. Zostaniesz teraz przeniesiony do płatności.");
+
+            // I DOPIERO TERAZ otwieramy link do PayPal w nowej karcie
+            window.open(button.href, '_blank');
         });
     });
-
 });
 </script>
 
