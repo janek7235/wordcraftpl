@@ -1,4 +1,4 @@
-/* Plik: style.css */
+/* Plik: style.css - WERSJA FINALNA, KOMPLETNA */
 
 /* --- RESET I GŁÓWNE STYLE --- */
 body {
@@ -32,65 +32,7 @@ h1 {
 h2 {
     color: #ffaa00;
     text-align: center;
-    font-size: 2 `.hero { ... }` na ten poniższy. W tym kodzie usunąłem link do obrazka i zastąpiłem go gradientem.
-
-    ```css
-    /* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z TŁEM KOLOROWYM) --- */
-    .hero {
-        text-align: center;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-
-        /* USUWAMY TŁO OBRAZKOWE I ZASTĘPUJEMY JE SUBTELNYM GRADIENTEM */
-        background: radial-gradient(circle at center, #2a2a30 0%, #1a1a1a 80%);
-    }
-    ```
-
-To wszystko, co musisz zmienić! Gradient idzie od minimalnie jaśniejszego, ciemnoszarego koloru na środku (`#2a2a30`) do głównego tła Twojej strony na krawędziach (`#1a1a1a`). Wygląda to bardzo elegancko i skupia uwagę na środku strony, a co najważniejsze – jest w 100% niezawodne.
-
----
-
-### **Dla pewności: Oto cały, finalny kod `style.css`**
-
-Żeby uniknąć jakichkolwiek pomyłek, poniżej wklejam CAŁY, KOMPLETNY plik `style.css` z już wprowadzoną zmianą. Po prostu skopiuj go i zastąp całą zawartość swojego pliku `style.css`.
-
-```css
-/* Plik: style.css */
-
-/* --- RESET I GŁÓWNE STYLE --- */
-body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* Dostosowanie dla stron innych niż główna, aby treść nie chowała się pod menu */
-main.container {
-    padding-top: 100px;
-}
-
-h1 {
-    color: #ffaa00;
-    text-align: center;
-    font-size: 3em;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    .2em;
+    font-size: 2.2em;
     margin-bottom: 40px;
 }
 
@@ -111,7 +53,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ważne przy `width: 100%` i paddingu */
     z-index: 100;
 }
 
@@ -140,7 +82,7 @@ nav a:hover {
     color: #1a1a1a;
 }
 
-/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z KOLOREM ZAMIAST OBRAZKA) --- */
+/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z TWOIM WŁASNYM TŁEM) --- */
 .hero {
     text-align: center;
     height: 100vh;
@@ -149,9 +91,8 @@ nav a:hover {
     justify-content: center;
     box-sizing: border-box;
 
-    /* PROSTY I ELEGANCKI GRADIENT ZAMIAST TŁA */
-    background-color: #1a1a1a;
-    background: radial-gradient(circle, rgb(38, 38, 38) 0%, rgb(20, 20, 20) 100%);
+    /* TWOJE WŁASNE TŁO USTAWIONE PONIŻEJ */
+    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://i.imgur.com/UfJ4hWJ.jpeg') no-repeat center center/cover;
 }
 .hero p {
     font-size: 1.3em;
@@ -176,69 +117,7 @@ nav a:hover {
     display: inline-block;
     padding: 15px 35px;
     background-color: #ffaa00;
-    color: #1a1a1color: #ffaa00;
-    text-align: center;
-    font-size: 2.2em;
-    margin-bottom: 40px;
-}
-
-p {
-    line-height: 1.7;
-    font-size: 1.1em;
-}
-
-/* --- NAGŁÓWEK I NAWIGACJA (wspólne dla wszystkich stron) --- */
-header {
-    background-color: #1f1f1f;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid #ffaa00;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    z-index: 100;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-}
-.logo span {
-    color: #ffaa00;
-}
-
-nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 1.1em;
-    margin-left: 25px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav a:hover {
-    background-color: #ffaa00;
     color: #1a1a1a;
-}
-
-/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z TŁEM KOLOROWYM) --- */
-.hero {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    
-    /* Zamiast obrazka, subtelny gradient, który zawsze zadziała */
-    background: radial-gradient(circle at center, #2a2a30 0%, #1a1a;
     font-weight: bold;
     font-size: 1.2em;
     text-decoration: none;
@@ -290,47 +169,7 @@ nav a:hover {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .ranga-card:hover {
-    transform: translateY(-a1a 80%);
-}
-
-.hero p {
-    font-size: 1.3em;
-    max-width: 600px;
-    margin: 20px auto 40px auto;
-}
-.ip-box {
-    background-color: #0e0e0e;
-    padding: 15px 25px;
-    border: 2px dashed #ffaa00;
-    display: inline-block;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-.ip-box p {
-    margin: 0;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-}
-.przycisk-glowny {
-    display: inline-block;
-    padding: 15px 35px;
-    background-color: #ffaa00;
-    color: #1a1a1a;
-    font-weight: bold;
-    font-size: 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    cursor: pointer;
-}
-.przycisk-glowny:hover {
-    background-color: #ffc107;
-    transform: scale(1.05);
-}
-
-/* --- REGULAMIN (strona regulamin.html) --- */
-.regulamin10px);
+    transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(255, 170, 0, 0.2);
 }
 .ranga-card h3 {
@@ -380,33 +219,7 @@ nav a:hover {
     color: #f0f0f0;
     border: 2px solid #444;
     border-radius: 6px;
-    padding: 14px-sekcja {
-    background-color: #262626;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 25px;
-    border-left: 5px solid #ffaa00;
-}
-.regulamin-sekcja h3 {
-    margin-top: 0;
-    font-size: 1.8em;
-    color: #fff;
-}
-.regulamin-sekcja ol {
-    padding-left: 20px;
-}
-.regulamin-sekcja li {
-    padding: 5px 0;
-}
-
-
-/* --- CENNIK (strona cennik.html) --- */
-.cennik-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
- 14px 14px 50px;
+    padding: 14px 14px 14px 50px;
     font-size: 1.1em;
     font-weight: bold;
     text-align: left;
@@ -427,20 +240,7 @@ nav a:hover {
 .modal-overlay {
     display: none;
     position: fixed;
-    z-.ranga-card {
-    background-color: #262626;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.ranga-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(index: 1000;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -453,74 +253,35 @@ nav a:hover {
 }
 .modal-content {
     background-color: #262626;
-    255, 170, 0, 0.2);
-}
-.ranga-card h3 {
-    margin-top: 0;
-    font-size: 2em;
-}
-.ranga-card .cena {
-    font-size: 2.5em;
     margin: auto;
     padding: 30px;
     border: 1px solid #555;
     width: 90%;
     max-width: 500px;
     border-radius: 12px;
-    box-shadow: 0 5px 25pxfont-weight: bold;
-    color: #fff;
-    margin: 20px 0;
-}
-.ranga-card .cena span {
-    font-size: 0.5em; rgba(0,0,0,0.5);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
     position: relative;
     text-align: center;
 }
 .close-modal {
     color: #aaa;
     position: absolute;
-    top:
-    font-weight: normal;
-    color: #bbb;
-}
-.open-modal-button {
-    margin-top: 20px;
-}
-
-
-/* --- STYLE DLA PÓL NA NICK W CENNIKU I OKNIE --- */
-.nick-input-wrapper {
-    position: 10px;
+    top: 10px;
     right: 20px;
     font-size: 28px;
     font-weight: bold;
     transition: color 0.3s;
 }
-. relative;
-}
-.nick-input-wrapper:first-of-type {
-    margin-bottom:close-modal:hover,
+.close-modal:hover,
 .close-modal:focus {
     color: #fff;
-    text 10px;
-}
-.nick-input-wrapper::before {
-    content: '👤';
-    position: absolute;
-    left: 15px;
-    top: 50%;
--decoration: none;
+    text-decoration: none;
     cursor: pointer;
 }
 .modal-content h2 {
     font-size: 2em;
     margin-top: 0;
-    margin-bottom: 1    transform: translateY(-50%);
-    color: #777;
-    font-size: 1.2em;
-}
-.nick-input-wrapper.discord::before {
-    content: '0px;
+    margin-bottom: 10px;
 }
 .modal-price {
     font-size: 1.5em;
@@ -531,15 +292,7 @@ nav a:hover {
 .modal-price span {
     color: #ffaa00;
 }
-.💬';
-    font-size: 1.1em;
-}
-.nick-input {
-    width: 100%;
-    box-sizing: border-box;
-    background-color: #1f1f1f;
-    color: #f0f0f0;
-    border: modal-buttons-wrapper a {
+.modal-buttons-wrapper a {
     margin-top: 10px;
     display: block;
     text-decoration: none;
@@ -548,13 +301,7 @@ nav a:hover {
     margin-top: 25px;
 }
 @keyframes fadeIn {
-  from { opacity: 2px solid #444;
-    border-radius: 6px;
-    padding: 14px 14px 14px 50px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-align: left;
-    transition: border0; }
+  from { opacity: 0; }
   to { opacity: 1; }
 }
 
@@ -564,15 +311,7 @@ nav a:hover {
     header {
         flex-direction: column;
         padding: 20px;
-    -color 0.3s ease, box-shadow 0.3s ease;
-}
-.nick-input:focus {
-    outline: none;
-    border-color: #ffaa00;
-    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
-}
-.nick-input::placeholder {
-    color: #777}
+    }
     nav {
         margin-top: 20px;
         width: 100%;
