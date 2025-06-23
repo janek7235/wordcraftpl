@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WordCraftPL - Serwer Minecraft</title>
-    <!-- TA LINIJKA JEST KLUCZOWA - MUSI BYĆ DOKŁADNIE TAKA -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <!-- NAGŁÓWEK Z MENU -->
     <header>
         <a href="index.html" class="logo">WordCraft<span>PL</span></a>
         <nav>
@@ -20,18 +18,49 @@
         </nav>
     </header>
 
-    <!-- SEKCJA GŁÓWNA Z TŁEM -->
     <main class="hero">
         <div class="container">
             <h1>ODKRYJ ŚWIAT WORDCRAFT.PL</h1>
             <p>Twoje nowe miejsce przygód, kreatywności i epickich bitew. Dołącz do najlepszej społeczności w Polsce i rozpocznij swoją podróż już dziś!</p>
-            <div class="ip-box">
-                <p>WordCraftpl.aternos.me</p>
+            
+            <!-- POPRAWIONE: Używamy nowego, klikalnego przycisku do kopiowania IP -->
+            <div id="copy-ip-button" title="Kliknij, aby skopiować!">
+                <span>WordCraftpl.aternos.me</span>
             </div>
-            <br>
+
             <a href="cennik.html" class="przycisk-glowny">WESPRZYJ NAS</a>
         </div>
     </main>
     
+    <!-- POPRAWIONE: Dodajemy stopkę -->
+    <footer>
+        <ul class="footer-links">
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="regulamin.html">Regulamin</a></li>
+            <li><a href="cennik.html">Cennik</a></li>
+            <li><a href="https://discord.gg/uvAhjpQsA9" target="_blank">Discord</a></li>
+        </ul>
+        <p class="footer-copyright">© 2024 WordCraftPL. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <!-- POPRAWIONE: Dodajemy skrypt do kopiowania -->
+    <script>
+        const copyButton = document.getElementById('copy-ip-button');
+        
+        copyButton.addEventListener('click', () => {
+            const ipAddress = copyButton.querySelector('span').textContent;
+            navigator.clipboard.writeText(ipAddress).then(() => {
+                const originalText = ipAddress;
+                copyButton.querySelector('span').textContent = 'Skopiowano!';
+                setTimeout(() => {
+                    copyButton.querySelector('span').textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Błąd kopiowania do schowka: ', err);
+                alert('Nie udało się skopiować IP. Użyj Ctrl+C.');
+            });
+        });
+    </script>
+
 </body>
 </html>
