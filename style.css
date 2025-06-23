@@ -81,13 +81,66 @@ nav a:hover { background-color: #ffaa00; color: #1a1a1a; }
 .ranga-card .cena span { font-size: 0.5em; font-weight: normal; color: #bbb; }
 .open-modal-button { margin-top: 20px; }
 
-/* --- STYLE DLA PUZZLI Z OBRAZKA --- */
-#image-puzzle-container { margin: 25px auto; padding: 15px; background-color: #1f1f1f; border: 2px solid #444; border-radius: 8px; text-align: center; }
-#image-puzzle-container p { font-size: 0.9em; margin-top: 0; color: #ccc; }
-#puzzle-board { display: grid; grid-template-columns: repeat(2, 80px); grid-template-rows: repeat(2, 80px); gap: 5px; justify-content: center; margin-bottom: 20px; }
-.puzzle-slot { width: 80px; height: 80px; background-color: #1a1a1a; border: 2px dashed #555; border-radius: 4px; transition: background-color 0.3s, border-color 0.3s; }
-#puzzle-pieces { display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 84px; padding: 10px; background-color: #1a1a1a; border-radius: 6px; }
+/* --- STYLE DLA PUZZLI Z OBRAZKA (PLAN NUKLEARNY - OSOBNE OBRAZKI) --- */
+#image-puzzle-container {
+    margin: 25px auto;
+    padding: 15px;
+    background-color: #1f1f1f;
+    border: 2px solid #444;
+    border-radius: 8px;
+    text-align: center;
+}
+#image-puzzle-container p {
+    font-size: 0.9em;
+    margin-top: 0;
+    color: #ccc;
+}
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(2, 80px);
+    grid-template-rows: repeat(2, 80px);
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.puzzle-slot {
+    width: 80px;
+    height: 80px;
+    background-color: #1a1a1a;
+    border: 2px dashed #555;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+#puzzle-pieces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 84px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 6px;
+}
+.puzzle-piece {
+    width: 80px;
+    height: 80px;
+    background-size: cover; /* Dopasowuje obrazek do elementu */
+    border-radius: 4px;
+    cursor: grab;
+}
+.puzzle-piece:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+/* Każdy kawałek ma teraz swój WŁASNY link do obrazka! */
+.puzzle-piece.piece1 { background-image: url('https://i.imgur.com/G5qWJ4p.png'); } /* Górny lewy */
+.puzzle-piece.piece2 { background-image: url('https://i.imgur.com/8Q9j9s2.png'); } /* Górny prawy */
+.puzzle-piece.piece3 { background-image: url('https://i.imgur.com/jE1lC2w.png'); } /* Dolny lewy */
+.puzzle-piece.piece4 { background-image: url('https://i.imgur.com/N7b0D6m.png'); } /* Dolny prawy */
 
+
+.puzzle-slot.hover { background-color: #333; border-color: #ffaa00; }
+.puzzle-slot.solved { border-color: #4CAF50; border-style: solid; }
 /* ======== TU JEST KLUCZOWA ZMIANA ======= */
 .puzzle-piece {
     width: 80px; height: 80px;
