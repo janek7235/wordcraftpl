@@ -1,4 +1,4 @@
-/* Plik: style.css - WERSJA Z PUZZLAMI Z OBRAZKA */
+/* Plik: style.css - WERSJA Z PUZZLAMI Z OBRAZKA (NAPRAWIONA) */
 
 /* --- RESET I GŁÓWNE STYLE --- */
 body {
@@ -41,7 +41,7 @@ p {
     font-size: 1.1em;
 }
 
-/* --- NAGŁÓWEK I NAWIGACJA (wspólne dla wszystkich stron) --- */
+/* --- NAGŁÓWEK I NAWIGACJA --- */
 header {
     background-color: #1f1f1f;
     padding: 15px 40px;
@@ -49,11 +49,11 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid #ffaa00;
-    position: fixed; /* Przyklejony na górze */
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    box-sizing: border-box; /* Ważne przy `width: 100%` i paddingu */
+    box-sizing: border-box;
     z-index: 100;
 }
 
@@ -82,7 +82,7 @@ nav a:hover {
     color: #1a1a1a;
 }
 
-/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z KOLOREM ZAMIAST OBRAZKA) --- */
+/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ --- */
 .hero {
     text-align: center;
     height: 100vh;
@@ -90,8 +90,6 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-
-    /* PROSTY I ELEGANCKI GRADIENT ZAMIAST TŁA */
     background: radial-gradient(circle at center, #2a2a30 0%, #1a1a1a 80%);
 }
 .hero p {
@@ -130,7 +128,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* --- REGULAMIN (strona regulamin.html) --- */
+/* --- REGULAMIN --- */
 .regulamin-sekcja {
     background-color: #262626;
     padding: 25px;
@@ -143,15 +141,10 @@ nav a:hover {
     font-size: 1.8em;
     color: #fff;
 }
-.regulamin-sekcja ol {
-    padding-left: 20px;
-}
-.regulamin-sekcja li {
-    padding: 5px 0;
-}
+.regulamin-sekcja ol { padding-left: 20px; }
+.regulamin-sekcja li { padding: 5px 0; }
 
-
-/* --- CENNIK (strona cennik.html) --- */
+/* --- CENNIK --- */
 .cennik-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -172,10 +165,7 @@ nav a:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(255, 170, 0, 0.2);
 }
-.ranga-card h3 {
-    margin-top: 0;
-    font-size: 2em;
-}
+.ranga-card h3 { margin-top: 0; font-size: 2em; }
 .ranga-card .cena {
     font-size: 2.5em;
     font-weight: bold;
@@ -187,10 +177,7 @@ nav a:hover {
     font-weight: normal;
     color: #bbb;
 }
-.open-modal-button {
-    margin-top: 20px;
-}
-
+.open-modal-button { margin-top: 20px; }
 
 /* --- STYLE DLA PUZZLI Z OBRAZKA --- */
 #image-puzzle-container {
@@ -201,22 +188,19 @@ nav a:hover {
     border-radius: 8px;
     text-align: center;
 }
-
 #image-puzzle-container p {
     font-size: 0.9em;
     margin-top: 0;
     color: #ccc;
 }
-
 #puzzle-board {
     display: grid;
-    grid-template-columns: repeat(2, 80px); /* siatka 2x2 */
+    grid-template-columns: repeat(2, 80px);
     grid-template-rows: repeat(2, 80px);
     gap: 5px;
     justify-content: center;
     margin-bottom: 20px;
 }
-
 .puzzle-slot {
     width: 80px;
     height: 80px;
@@ -225,7 +209,6 @@ nav a:hover {
     border-radius: 4px;
     transition: background-color 0.3s, border-color 0.3s;
 }
-
 #puzzle-pieces {
     display: flex;
     justify-content: center;
@@ -236,11 +219,11 @@ nav a:hover {
     background-color: #1a1a1a;
     border-radius: 6px;
 }
-
 .puzzle-piece {
     width: 80px;
     height: 80px;
-    background-image: url('https://i.imgur.com/W29F11D.png');
+    /* ==== NOWY, DZIAŁAJĄCY LINK DO OBRAZKA DIAMENTU ==== */
+    background-image: url('https://i.imgur.com/vHq4gU7.png'); 
     border: 1px solid #777;
     border-radius: 4px;
     cursor: grab;
@@ -250,30 +233,17 @@ nav a:hover {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
 }
-
 .puzzle-piece[data-piece="1"] { background-position: 0 0; }
 .puzzle-piece[data-piece="2"] { background-position: -80px 0; }
 .puzzle-piece[data-piece="3"] { background-position: 0 -80px; }
 .puzzle-piece[data-piece="4"] { background-position: -80px -80px; }
 
-.puzzle-slot.hover {
-    background-color: #333;
-    border-color: #ffaa00;
-}
-
-.puzzle-slot.solved {
-    border-color: #4CAF50;
-    border-style: solid;
-}
-
+.puzzle-slot.hover { background-color: #333; border-color: #ffaa00; }
+.puzzle-slot.solved { border-color: #4CAF50; border-style: solid; }
 
 /* --- STYLE DLA PÓL NA NICK (wspólne) --- */
-.nick-input-wrapper {
-    position: relative;
-}
-.nick-input-wrapper:first-of-type {
-    margin-bottom: 10px;
-}
+.nick-input-wrapper { position: relative; }
+.nick-input-wrapper:first-of-type { margin-bottom: 10px; }
 .nick-input-wrapper::before {
     content: '👤';
     position: absolute;
@@ -305,98 +275,39 @@ nav a:hover {
     border-color: #ffaa00;
     box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
 }
-.nick-input::placeholder {
-    color: #777;
-    font-weight: normal;
-    opacity: 1;
-}
+.nick-input::placeholder { color: #777; font-weight: normal; opacity: 1; }
 
 /* --- STYLE DLA OKNA MODALNEGO --- */
 .modal-overlay {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.85);
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 0.3s ease;
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+    width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center; align-items: center; animation: fadeIn 0.3s ease;
 }
 .modal-content {
-    background-color: #262626;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #555;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    position: relative;
-    text-align: center;
+    background-color: #262626; margin: auto; padding: 30px;
+    border: 1px solid #555; width: 90%; max-width: 500px;
+    border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    position: relative; text-align: center;
 }
 .close-modal {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: #aaa; position: absolute; top: 10px; right: 20px;
+    font-size: 28px; font-weight: bold; transition: color 0.3s;
 }
 .close-modal:hover,
-.close-modal:focus {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-.modal-content h2 {
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-.modal-price {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ccc;
-    margin-bottom: 25px;
-}
-.modal-price span {
-    color: #ffaa00;
-}
-.modal-buttons-wrapper a {
-    margin-top: 10px;
-    display: block;
-    text-decoration: none;
-}
-.modal-buttons-wrapper a:first-of-type {
-    margin-top: 25px;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
+.close-modal:focus { color: #fff; text-decoration: none; cursor: pointer; }
+.modal-content h2 { font-size: 2em; margin-top: 0; margin-bottom: 10px; }
+.modal-price { font-size: 1.5em; font-weight: bold; color: #ccc; margin-bottom: 25px; }
+.modal-price span { color: #ffaa00; }
+.modal-buttons-wrapper a { margin-top: 10px; display: block; text-decoration: none; }
+.modal-buttons-wrapper a:first-of-type { margin-top: 25px; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* --- RESPONSOWNOŚĆ (DLA TELEFONÓW) --- */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 20px;
-    }
+    header { flex-direction: column; padding: 20px; }
     nav {
-        margin-top: 20px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin-top: 20px; width: 100%; display: flex;
+        flex-direction: column; align-items: center;
     }
-    nav a {
-        margin: 5px 0;
-        width: 100%;
-        text-align: center;
-    }
+    nav a { margin: 5px 0; width: 100%; text-align: center; }
 }
