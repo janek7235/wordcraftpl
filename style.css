@@ -152,6 +152,58 @@ nav a:hover { background-color: #ffaa00; color: #1a1a1a; }
 .modal-buttons-wrapper a { margin-top: 10px; display: block; text-decoration: none; }
 .modal-buttons-wrapper a:first-of-type { margin-top: 25px; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* Plik: style.css - wklej ten fragment PRZED @media */
+
+/* --- STYLE DLA STOPKI --- */
+footer {
+    background-color: #111; /* Jeszcze ciemniejszy niż reszta tła */
+    color: #888;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 3px solid #ffaa00;
+}
+.footer-links {
+    margin: 0 0 15px 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: #ffaa00;
+}
+.footer-copyright {
+    font-size: 0.9em;
+}
+
+/* --- NOWE STYLE DLA PRZYCISKU KOPIOWANIA IP --- */
+/* Zastępujemy stary .ip-box tym nowym, klikalnym */
+#copy-ip-button {
+    background-color: #0e0e0e;
+    padding: 15px 25px;
+    border: 2px dashed #ffaa00;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s, border-style 0.3s;
+}
+
+#copy-ip-button:hover {
+    background-color: #1f1f1f;
+    border-style: solid;
+}
 
 /* === SEKCJA MOBILNA - NAJWAŻNIEJSZA NA KOŃCU === */
 @media (max-width: 768px) {
