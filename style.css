@@ -1,19 +1,8 @@
-/* Plik: style.css - WERSJA Z 4 OSOBNYMI OBRAZKAMI PUZZLI */
+/* Plik: style.css - WERSJA OSTATECZNA POPRAWIONA */
 
 /* --- RESET I GŁÓWNE STYLE --- */
-body {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
+body { background-color: #1a1a1a; color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 main.container { padding-top: 100px; }
 h1 { color: #ffaa00; text-align: center; font-size: 2.5em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
 h2 { color: #ffaa00; text-align: center; font-size: 2em; margin-bottom: 30px; }
@@ -21,38 +10,22 @@ p { line-height: 1.7; font-size: 1em; }
 
 /* --- NAGŁÓWEK I NAWIGACJA --- */
 header {
-    background-color: #1f1f1f;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid #ffaa00;
-    position: fixed; width: 100%; top: 0; left: 0;
+    background-color: #1f1f1f; padding: 15px 20px; display: flex; justify-content: space-between;
+    align-items: center; border-bottom: 3px solid #ffaa00; position: fixed; width: 100%; top: 0; left: 0;
     box-sizing: border-box; z-index: 100;
 }
 .logo { font-size: 1.5em; font-weight: bold; color: #fff; text-decoration: none; }
 .logo span { color: #ffaa00; }
-nav a {
-    color: #e0e0e0; text-decoration: none; font-size: 1.1em;
-    margin-left: 20px; padding: 8px 12px; border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
+nav a { color: #e0e0e0; text-decoration: none; font-size: 1.1em; margin-left: 20px; padding: 8px 12px; border-radius: 5px; transition: background-color 0.3s, color 0.3s; }
 nav a:hover { background-color: #ffaa00; color: #1a1a1a; }
 
 /* --- SEKCJA GŁÓWNA --- */
 .hero {
-    text-align: center; height: 100vh; display: flex;
-    align-items: center; justify-content: center; box-sizing: border-box;
-    background: radial-gradient(circle at center, #2a2a30 0%, #1a1a1a 80%);
+    text-align: center; height: 100vh; display: flex; align-items: center;
+    justify-content: center; box-sizing: border-box; background: radial-gradient(circle at center, #2a2a30 0%, #1a1a1a 80%);
     padding: 0 15px;
 }
 .hero p { font-size: 1.1em; max-width: 600px; margin: 20px auto 30px auto; }
-.ip-box {
-    background-color: #0e0e0e; padding: 15px 25px;
-    border: 2px dashed #ffaa00; display: inline-block;
-    border-radius: 8px; margin-bottom: 20px;
-}
-.ip-box p { margin: 0; font-size: 1.3em; font-weight: bold; font-family: 'Courier New', Courier, monospace; }
 .przycisk-glowny {
     display: inline-block; padding: 15px 35px; background-color: #ffaa00;
     color: #1a1a1a; font-weight: bold; font-size: 1.1em; text-decoration: none;
@@ -60,11 +33,17 @@ nav a:hover { background-color: #ffaa00; color: #1a1a1a; }
 }
 .przycisk-glowny:hover { background-color: #ffc107; transform: scale(1.05); }
 
-/* --- REGULAMIN --- */
-.regulamin-sekcja {
-    background-color: #262626; padding: 20px; border-radius: 8px;
-    margin-bottom: 25px; border-left: 5px solid #ffaa00;
+/* --- NOWE STYLE DLA PRZYCISKU KOPIOWANIA IP --- */
+#copy-ip-button {
+    background-color: #0e0e0e; padding: 15px 25px; border: 2px dashed #ffaa00;
+    border-radius: 8px; margin-bottom: 20px; font-size: 1.3em; font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; color: #e0e0e0; cursor: pointer;
+    transition: background-color 0.3s, border-style 0.3s;
 }
+#copy-ip-button:hover { background-color: #1f1f1f; border-style: solid; }
+
+/* --- REGULAMIN --- */
+.regulamin-sekcja { background-color: #262626; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 5px solid #ffaa00; }
 .regulamin-sekcja h3 { margin-top: 0; font-size: 1.5em; color: #fff; }
 .regulamin-sekcja ol { padding-left: 20px; }
 .regulamin-sekcja li { padding: 5px 0; }
@@ -88,145 +67,66 @@ nav a:hover { background-color: #ffaa00; color: #1a1a1a; }
 #puzzle-board { display: grid; grid-template-columns: repeat(2, 80px); grid-template-rows: repeat(2, 80px); gap: 5px; justify-content: center; margin-bottom: 20px; }
 .puzzle-slot { width: 80px; height: 80px; background-color: #1a1a1a; border: 2px dashed #555; border-radius: 4px; transition: background-color 0.3s, border-color 0.3s; }
 #puzzle-pieces { display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 84px; padding: 10px; background-color: #1a1a1a; border-radius: 6px; }
-
-.puzzle-piece {
-    width: 80px;
-    height: 80px;
-    background-size: cover;
-    border-radius: 4px;
-    cursor: grab;
-}
-.puzzle-piece:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
-}
-
-/* Każdy kawałek ma teraz swój WŁASNY link do obrazka! */
-.puzzle-piece.piece1 { background-image: url('https://i.imgur.com/G5qWJ4p.png'); } /* Górny lewy */
-.puzzle-piece.piece2 { background-image: url('https://i.imgur.com/8Q9j9s2.png'); } /* Górny prawy */
-.puzzle-piece.piece3 { background-image: url('https://i.imgur.com/jE1lC2w.png'); } /* Dolny lewy */
-.puzzle-piece.piece4 { background-image: url('https://i.imgur.com/N7b0D6m.png'); } /* Dolny prawy */
-
-
+.puzzle-piece { width: 80px; height: 80px; background-size: cover; border-radius: 4px; cursor: grab; }
+.puzzle-piece:hover { transform: scale(1.05); box-shadow: 0 0 10px rgba(255, 170, 0, 0.5); }
+.puzzle-piece.piece1 { background-image: url('https://i.imgur.com/G5qWJ4p.png'); }
+.puzzle-piece.piece2 { background-image: url('https://i.imgur.com/8Q9j9s2.png'); }
+.puzzle-piece.piece3 { background-image: url('https://i.imgur.com/jE1lC2w.png'); }
+.puzzle-piece.piece4 { background-image: url('https://i.imgur.com/N7b0D6m.png'); }
 .puzzle-slot.hover { background-color: #333; border-color: #ffaa00; }
 .puzzle-slot.solved { border-color: #4CAF50; border-style: solid; }
 
 /* --- STYLE DLA PÓL NA NICK (wspólne) --- */
 .nick-input-wrapper { position: relative; }
 .nick-input-wrapper:first-of-type { margin-bottom: 10px; }
-.nick-input-wrapper::before {
-    content: '👤'; position: absolute; left: 15px; top: 50%;
-    transform: translateY(-50%); color: #777; font-size: 1.2em;
-}
+.nick-input-wrapper::before { content: '👤'; position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #777; font-size: 1.2em; }
 .nick-input-wrapper.discord::before { content: '💬'; font-size: 1.1em; }
 .nick-input {
-    width: 100%; box-sizing: border-box; background-color: #1f1f1f;
-    color: #f0f0f0; border: 2px solid #444; border-radius: 6px;
-    padding: 14px 14px 14px 50px; font-size: 1.1em; font-weight: bold;
-    text-align: left; transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; box-sizing: border-box; background-color: #1f1f1f; color: #f0f0f0;
+    border: 2px solid #444; border-radius: 6px; padding: 14px 14px 14px 50px;
+    font-size: 1.1em; font-weight: bold; text-align: left; transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .nick-input:focus { outline: none; border-color: #ffaa00; box-shadow: 0 0 10px rgba(255, 170, 0, 0.5); }
 .nick-input::placeholder { color: #777; font-weight: normal; opacity: 1; }
 
 /* --- STYLE DLA OKNA MODALNEGO --- */
 .modal-overlay {
-    display: none; position: fixed; z-index: 1000; left: 0; top: 0;
-    width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.85);
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%;
+    height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.85);
     justify-content: center; align-items: center; animation: fadeIn 0.3s ease;
 }
 .modal-content {
-    background-color: #262626; margin: auto; padding: 20px;
-    border: 1px solid #555; width: 90%; max-width: 500px;
-    border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    background-color: #262626; margin: auto; padding: 20px; border: 1px solid #555;
+    width: 90%; max-width: 500px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.5);
     position: relative; text-align: center;
 }
-.close-modal {
-    color: #aaa; position: absolute; top: 10px; right: 20px;
-    font-size: 28px; font-weight: bold; transition: color 0.3s;
-}
-.close-modal:hover,
-.close-modal:focus { color: #fff; text-decoration: none; cursor: pointer; }
+.close-modal { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; transition: color 0.3s; }
+.close-modal:hover, .close-modal:focus { color: #fff; text-decoration: none; cursor: pointer; }
 .modal-content h2 { font-size: 1.8em; margin-top: 0; margin-bottom: 10px; }
 .modal-price { font-size: 1.3em; font-weight: bold; color: #ccc; margin-bottom: 20px; }
 .modal-price span { color: #ffaa00; }
 .modal-buttons-wrapper a { margin-top: 10px; display: block; text-decoration: none; }
 .modal-buttons-wrapper a:first-of-type { margin-top: 25px; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-/* Plik: style.css - wklej ten fragment PRZED @media */
 
 /* --- STYLE DLA STOPKI --- */
 footer {
-    background-color: #111; /* Jeszcze ciemniejszy niż reszta tła */
-    color: #888;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-    border-top: 3px solid #ffaa00;
+    background-color: #111; color: #888; text-align: center;
+    padding: 30px 20px; margin-top: 50px; border-top: 3px solid #ffaa00;
 }
-.footer-links {
-    margin: 0 0 15px 0;
-    padding: 0;
-    list-style: none;
-}
-.footer-links li {
-    display: inline-block;
-    margin: 0 15px;
-}
-.footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.footer-links a:hover {
-    color: #ffaa00;
-}
-.footer-copyright {
-    font-size: 0.9em;
-}
+.footer-links { margin: 0 0 15px 0; padding: 0; list-style: none; }
+.footer-links li { display: inline-block; margin: 0 15px; }
+.footer-links a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: #ffaa00; }
+.footer-copyright { font-size: 0.9em; }
 
-/* --- NOWE STYLE DLA PRZYCISKU KOPIOWANIA IP --- */
-/* Zastępujemy stary .ip-box tym nowym, klikalnym */
-#copy-ip-button {
-    background-color: #0e0e0e;
-    padding: 15px 25px;
-    border: 2px dashed #ffaa00;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-    color: #e0e0e0;
-    cursor: pointer;
-    transition: background-color 0.3s, border-style 0.3s;
-}
-
-#copy-ip-button:hover {
-    background-color: #1f1f1f;
-    border-style: solid;
-}
-
-/* === SEKCJA MOBILNA - NAJWAŻNIEJSZA NA KOŃCU === */
+/* --- RESPONSOWNOŚĆ (STYLE DLA TELEFONÓW) --- */
 @media (max-width: 768px) {
-    /* Mniejsze logo i tekst w menu */
-    .logo { font-size: 1.3em; }
+    header { flex-direction: column; padding: 15px; }
+    nav { margin-top: 15px; }
     nav a { font-size: 1em; margin-left: 10px; padding: 6px 8px; }
-
-    /* Mniejsze napisy na stronie głównej */
-    h1 { font-size: 2em; }
-    .hero p { font-size: 1em; }
-    
-    /* Zmniejszenie puzzli w oknie modalnym */
-    #puzzle-board {
-        grid-template-columns: repeat(2, 60px);
-        grid-template-rows: repeat(2, 60px);
-        gap: 4px;
-    }
-    .puzzle-slot, .puzzle-piece {
-        width: 60px;
-        height: 60px;
-    }
-    #puzzle-pieces {
-        gap: 8px;
-        min-height: 64px;
-    }
+    h1 { font-size: 2em; } .hero p { font-size: 1em; }
+    #puzzle-board { grid-template-columns: repeat(2, 60px); grid-template-rows: repeat(2, 60px); gap: 4px; }
+    .puzzle-slot, .puzzle-piece { width: 60px; height: 60px; }
+    #puzzle-pieces { gap: 8px; min-height: 64px; }
 }
