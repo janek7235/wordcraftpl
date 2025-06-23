@@ -25,77 +25,44 @@
         </p>
 
         <div class="cennik-wrapper">
-
-            <!-- Ranga VIP -->
-            <div class="ranga-card">
-                <div>
-                    <h3 style="color: #4CAF50;">VIP</h3>
-                    <div class="cena">5<span>.00 PLN</span></div>
-                    <p>Podstawowe korzyści i dostęp do /kit vip!</p>
-                </div>
-                <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/5">Kup Teraz</a>
-            </div>
-
-            <!-- Ranga SVIP -->
-            <div class="ranga-card">
-                <div>
-                    <h3 style="color: #ffc700;">SVIP</h3>
-                    <div class="cena">10<span>.00 PLN</span></div>
-                    <p>Wszystko z VIP oraz dodatkowe komendy!</p>
-                </div>
-                <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/10">Kup Teraz</a>
-            </div>
-            
-            <!-- Ranga MVIP -->
-            <div class="ranga-card">
-                 <div>
-                    <h3 style="color: #4af5b5;">MVIP</h3>
-                    <div class="cena">15<span>.00 PLN</span></div>
-                    <p>Wszystko z SVIP, dostęp do /fly i więcej!</p>
-                </div>
-                <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/15">Kup Teraz</a>
-            </div>
-
-            <!-- Ranga Sponsor -->
-            <div class="ranga-card">
-                <div>
-                    <h3 style="color: #3498db;">Sponsor</h3>
-                    <div class="cena">25<span>.00 PLN</span></div>
-                    <p>Potężna ranga z unikalnymi benefitami!</p>
-                </div>
-                <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/25">Kup Teraz</a>
-            </div>
-
-            <!-- Ranga Sigma -->
-            <div class="ranga-card">
-                <div>
-                    <h3 style="color: #e74c3c;">Sigma</h3>
-                    <div class="cena">30<span>.00 PLN</span></div>
-                    <p>Najwyższa ranga dla prawdziwych kozaków!</p>
-                </div>
-                <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/30">Kup Teraz</a>
-            </div>
+            <!-- Rangi -->
+            <div class="ranga-card"> <div> <h3 style="color: #4CAF50;">VIP</h3> <div class="cena">5<span>.00 PLN</span></div> <p>Podstawowe korzyści i dostęp do /kit vip!</p> </div> <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/5">Kup Teraz</a> </div>
+            <div class="ranga-card"> <div> <h3 style="color: #ffc700;">SVIP</h3> <div class="cena">10<span>.00 PLN</span></div> <p>Wszystko z VIP oraz dodatkowe komendy!</p> </div> <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/10">Kup Teraz</a> </div>
+            <div class="ranga-card"> <div> <h3 style="color: #4af5b5;">MVIP</h3> <div class="cena">15<span>.00 PLN</span></div> <p>Wszystko z SVIP, dostęp do /fly i więcej!</p> </div> <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/15">Kup Teraz</a> </div>
+            <div class="ranga-card"> <div> <h3 style="color: #3498db;">Sponsor</h3> <div class="cena">25<span>.00 PLN</span></div> <p>Potężna ranga z unikalnymi benefitami!</p> </div> <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/25">Kup Teraz</a> </div>
+            <div class="ranga-card"> <div> <h3 style="color: #e74c3c;">Sigma</h3> <div class="cena">30<span>.00 PLN</span></div> <p>Najwyższa ranga dla prawdziwych kozaków!</p> </div> <a href="#" class="przycisk-glowny open-modal-button" data-paypal-link="https://www.paypal.com/paypalme/janek7235/30">Kup Teraz</a> </div>
         </div>
     </main>
     
-    <!-- === OKNO MODALNE (DOMYŚLNIE UKRYTE) === -->
+    <!-- === OKNO MODALNE (Z PUZZLAMI Z OBRAZKA) === -->
     <div id="paymentModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal">×</span>
             <h2>Kupujesz rangę: <span id="modalRankName"></span></h2>
             <div class="modal-price">Cena: <span id="modalRankPrice"></span></div>
 
-            <p style="font-size:0.9em; color:#ccc;">Wypełnij poniższe pola, abyśmy wiedzieli komu nadać rangę.</p>
+            <!-- Układanka z obrazka -->
+            <div id="image-puzzle-container">
+                <p>Ułóż obrazek, przeciągając kawałki w odpowiednie miejsca.</p>
+                <div id="puzzle-board">
+                    <div class="puzzle-slot" data-slot="1"></div>
+                    <div class="puzzle-slot" data-slot="2"></div>
+                    <div class="puzzle-slot" data-slot="3"></div>
+                    <div class="puzzle-slot" data-slot="4"></div>
+                </div>
+                <div id="puzzle-pieces">
+                    <div class="puzzle-piece" data-piece="1" draggable="true"></div>
+                    <div class="puzzle-piece" data-piece="2" draggable="true"></div>
+                    <div class="puzzle-piece" data-piece="3" draggable="true"></div>
+                    <div class="puzzle-piece" data-piece="4" draggable="true"></div>
+                </div>
+            </div>
 
-            <div class="nick-input-wrapper">
-                <input type="text" id="minecraftNickInputModal" class="nick-input" placeholder="Twój nick z gry..." required>
-            </div>
-            <div class="nick-input-wrapper discord">
-                <input type="text" id="discordNickInputModal" class="nick-input" placeholder="Twój nick z Discorda..." required>
-            </div>
+            <div class="nick-input-wrapper"> <input type="text" id="minecraftNickInputModal" class="nick-input" placeholder="Twój nick z gry..." required> </div>
+            <div class="nick-input-wrapper discord"> <input type="text" id="discordNickInputModal" class="nick-input" placeholder="Twój nick z Discorda..." required> </div>
             
             <div class="modal-buttons-wrapper">
-                <a href="#" id="modalPayPalButton" class="przycisk-glowny">Zapłać przez PayPal</a>
+                <a href="#" id="modalPayPalButton" class="przycisk-glowny" disabled>Zapłać przez PayPal</a>
                 <a href="https://discord.gg/uvAhjpQsA9" target="_blank" class="przycisk-glowny" style="background-color:#5865F2;">Ustal płatność (Discord)</a>
             </div>
         </div>
@@ -103,108 +70,99 @@
 
 
 <script>
-// Czekamy, aż cała strona się załaduje, aby uniknąć błędów
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- KROK 1: ZBIERAMY WSZYSTKIE POTRZEBNE ELEMENTY ZE STRONY ---
+    // === STAŁE ELEMENTY ===
     const modal = document.getElementById('paymentModal');
+    const openModalButtons = document.querySelectorAll('.open-modal-button');
     const closeModalButton = document.querySelector('.close-modal');
-    const allBuyButtons = document.querySelectorAll('.open-modal-button'); // Wszystkie przyciski "Kup Teraz" na kartach
-    
-    // Elementy wewnątrz okna modalnego, które będziemy zmieniać
-    const modalRankNameSpan = document.getElementById('modalRankName');
-    const modalRankPriceSpan = document.getElementById('modalRankPrice');
+    const modalRankName = document.getElementById('modalRankName');
+    const modalRankPrice = document.getElementById('modalRankPrice');
     const nickInputMC = document.getElementById('minecraftNickInputModal');
     const nickInputDC = document.getElementById('discordNickInputModal');
-    const finalPayPalButton = document.getElementById('modalPayPalButton'); // Przycisk PayPal w oknie
-    
-    // Twój link do webhooka na Discordzie
+    const modalPayPalButton = document.getElementById('modalPayPalButton');
     const webhookUrl = "https://discord.com/api/webhooks/1386252782649999410/SbwZySOcJL_yK-adPmzdfD1IM6NBxuroQZrfWaoq_3zJhP2xpCfiv5HL_auH1FhX3Wjv";
-
-    // --- KROK 2: DEFINIUJEMY FUNKCJE DO OTWIERANIA I ZAMYKANIA OKNA ---
+    
+    // === ELEMENTY PUZZLI ===
+    const slots = document.querySelectorAll('.puzzle-slot');
+    const piecesContainer = document.getElementById('puzzle-pieces');
+    const pieces = piecesContainer.querySelectorAll('.puzzle-piece');
+    let draggedPiece = null;
+    let solvedPieces = 0;
+    
+    // --- LOGIKA MODALNA ---
     const openModal = (rankName, rankPrice, payPalLink) => {
-        // Uzupełniamy okno danymi z klikniętej karty
-        modalRankNameSpan.textContent = rankName;
-        modalRankPriceSpan.textContent = rankPrice;
-        finalPayPalButton.href = payPalLink; // WAŻNE: Ustawiamy link dla przycisku PayPal
-        modal.style.display = 'flex'; // Pokazujemy okno
+        modalRankName.textContent = rankName;
+        modalRankPrice.textContent = rankPrice;
+        modalPayPalButton.href = payPalLink;
+        resetCaptcha();
+        modal.style.display = 'flex';
+    };
+    const closeModal = () => { modal.style.display = 'none'; };
+    openModalButtons.forEach(button => button.addEventListener('click', e => {
+        e.preventDefault();
+        const card = e.currentTarget.closest('.ranga-card');
+        openModal(card.querySelector('h3').textContent, card.querySelector('.cena').textContent.trim(), e.currentTarget.dataset.paypalLink);
+    }));
+    closeModalButton.addEventListener('click', closeModal);
+    window.addEventListener('click', e => { if (e.target == modal) closeModal(); });
+
+    // --- LOGIKA UKŁADANKI Z OBRAZKA ---
+    const resetCaptcha = () => {
+        solvedPieces = 0;
+        modalPayPalButton.setAttribute('disabled', true);
+        modalPayPalButton.style.opacity = '0.5';
+        modalPayPalButton.style.cursor = 'not-allowed';
+
+        slots.forEach(slot => {
+            slot.classList.remove('solved');
+            if (slot.firstChild) {
+                piecesContainer.appendChild(slot.firstChild);
+            }
+        });
+        
+        // LOSOWE MIESZANIE KAWAŁKÓW
+        Array.from(pieces).sort(() => Math.random() - 0.5).forEach(piece => piecesContainer.appendChild(piece));
     };
 
-    const closeModal = () => {
-        modal.style.display = 'none';
-        // Czyścimy dane po zamknięciu, aby były puste przy następnym otwarciu
-        nickInputMC.value = '';
-        nickInputDC.value = '';
-        nickInputMC.style.borderColor = '#444';
-        nickInputDC.style.borderColor = '#444';
-    };
+    pieces.forEach(piece => {
+        piece.addEventListener('dragstart', e => { draggedPiece = e.target; });
+    });
 
-    // --- KROK 3: DODAJEMY "NASŁUCHIWANIE" NA KLIKNIĘCIA ---
+    slots.forEach(slot => {
+        slot.addEventListener('dragover', e => { e.preventDefault(); if (!slot.firstChild) slot.classList.add('hover'); });
+        slot.addEventListener('dragleave', e => slot.classList.remove('hover'));
+        slot.addEventListener('drop', e => {
+            e.preventDefault();
+            slot.classList.remove('hover');
 
-    // Po kliknięciu dowolnego przycisku "Kup Teraz" na karcie...
-    allBuyButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            const card = button.closest('.ranga-card');
-            const rankName = card.querySelector('h3').textContent;
-            const rankPrice = card.querySelector('.cena').textContent.trim();
-            const payPalLink = button.dataset.paypalLink;
-            openModal(rankName, rankPrice, payPalLink); // Uruchamiamy funkcję otwierania okna
+            if (draggedPiece && !slot.firstChild && slot.dataset.slot === draggedPiece.dataset.piece) {
+                // POPRAWNY RUCH
+                slot.appendChild(draggedPiece);
+                slot.classList.add('solved');
+                solvedPieces++;
+
+                if (solvedPieces === pieces.length) {
+                    // UKŁADANKA ROZWIĄZANA!
+                    modalPayPalButton.removeAttribute('disabled');
+                    modalPayPalButton.style.opacity = '1';
+                    modalPayPalButton.style.cursor = 'pointer';
+                }
+            }
+            draggedPiece = null;
         });
     });
 
-    // Po kliknięciu przycisku "X" lub w tło
-    closeModalButton.addEventListener('click', closeModal);
-    window.addEventListener('click', (event) => {
-        if (event.target == modal) {
-            closeModal();
-        }
-    });
-
-    // Po kliknięciu finalnego przycisku PayPal W OKNIE
-    finalPayPalButton.addEventListener('click', (event) => {
-        event.preventDefault(); // Zatrzymujemy domyślne działanie
-
-        // Walidacja pól (sprawdzamy czy nie są puste)
+    // --- LOGIKA PRZYCISKU PAYPAL ---
+    modalPayPalButton.addEventListener('click', e => {
+        e.preventDefault();
+        if (solvedPieces !== pieces.length) { alert("Musisz najpierw ułożyć puzzle!"); return; }
         const nickGry = nickInputMC.value.trim();
         const nickDiscord = nickInputDC.value.trim();
-
-        if (nickGry === "") {
-            alert("Błąd: Musisz wpisać swój nick z gry!");
-            nickInputMC.style.borderColor = '#e74c3c';
-            return; // Kończymy funkcję
-        }
-        nickInputMC.style.borderColor = '#444'; // Resetujemy kolor po poprawieniu
-
-        if (nickDiscord === "") {
-            alert("Błąd: Musisz wpisać swój nick z Discorda!");
-            nickInputDC.style.borderColor = '#e74c3c';
-            return; // Kończymy funkcję
-        }
-        nickInputDC.style.borderColor = '#444'; // Resetujemy kolor po poprawieniu
-
-        // Przygotowujemy dane do wysłania na Discord
-        const embedData = {
-            embeds: [{
-                title: "✅ Nowe zamówienie przez PayPal!", color: 16758016,
-                fields: [
-                    { name: "👤 Nick w Grze", value: "```" + nickGry + "```", inline: true },
-                    { name: "💬 Nick na Discordzie", value: "```" + nickDiscord + "```", inline: true },
-                    { name: "💎 Zakupiona Ranga", value: modalRankNameSpan.textContent, inline: false },
-                    { name: "💰 Cena", value: modalRankPriceSpan.textContent, inline: false }
-                ],
-                footer: { text: "WordCraftPL - Powiadomienie o Płatności" }, timestamp: new Date()
-            }]
-        };
-        
-        // Wysyłamy powiadomienie na webhooka
-        fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(embedData) });
-
+        if (!nickGry || !nickDiscord) { alert("Oba pola z nickami muszą być wypełnione!"); return; }
+        fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({embeds: [{title: "✅ Nowe zamówienie przez PayPal!", color: 16758016, fields: [{ name: "👤 Nick w Grze", value: "```" + nickGry + "```", inline: true }, { name: "💬 Nick na Discordzie", value: "```" + nickDiscord + "```", inline: true }, { name: "💎 Zakupiona Ranga", value: modalRankName.textContent, inline: false }, { name: "💰 Cena", value: modalRankPrice.textContent, inline: false }], footer: { text: "WordCraftPL - Powiadomienie o Płatności" }, timestamp: new Date() }]}) });
         alert("Dziękujemy! Zostaniesz teraz przeniesiony do płatności.");
-        
-        // Zamykamy okno i otwieramy link do PayPal w nowej karcie
         closeModal();
-        window.open(finalPayPalButton.href, '_blank');
+        window.open(e.currentTarget.href, '_blank');
     });
 
 });
