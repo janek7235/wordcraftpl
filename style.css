@@ -1,4 +1,4 @@
-/* Plik: style.css - WERSJA FINALNA, KOMPLETNA */
+/* Plik: style.css - WERSJA Z PUZZLAMI Z OBRAZKA */
 
 /* --- RESET I GŁÓWNE STYLE --- */
 body {
@@ -82,7 +82,7 @@ nav a:hover {
     color: #1a1a1a;
 }
 
-/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z TWOIM WŁASNYM TŁEM) --- */
+/* --- SEKCJA GŁÓWNA NA STRONIE GŁÓWNEJ (Z KOLOREM ZAMIAST OBRAZKA) --- */
 .hero {
     text-align: center;
     height: 100vh;
@@ -91,8 +91,8 @@ nav a:hover {
     justify-content: center;
     box-sizing: border-box;
 
-    /* TWOJE WŁASNE TŁO USTAWIONE PONIŻEJ */
-    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://i.imgur.com/UfJ4hWJ.jpeg') no-repeat center center/cover;
+    /* PROSTY I ELEGANCKI GRADIENT ZAMIAST TŁA */
+    background: radial-gradient(circle at center, #2a2a30 0%, #1a1a1a 80%);
 }
 .hero p {
     font-size: 1.3em;
@@ -192,7 +192,82 @@ nav a:hover {
 }
 
 
-/* --- STYLE DLA PÓL NA NICK W CENNIKU I OKNIE --- */
+/* --- STYLE DLA PUZZLI Z OBRAZKA --- */
+#image-puzzle-container {
+    margin: 25px auto;
+    padding: 15px;
+    background-color: #1f1f1f;
+    border: 2px solid #444;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#image-puzzle-container p {
+    font-size: 0.9em;
+    margin-top: 0;
+    color: #ccc;
+}
+
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(2, 80px); /* siatka 2x2 */
+    grid-template-rows: repeat(2, 80px);
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.puzzle-slot {
+    width: 80px;
+    height: 80px;
+    background-color: #1a1a1a;
+    border: 2px dashed #555;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#puzzle-pieces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 84px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 6px;
+}
+
+.puzzle-piece {
+    width: 80px;
+    height: 80px;
+    background-image: url('https://i.imgur.com/W29F11D.png');
+    border: 1px solid #777;
+    border-radius: 4px;
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.puzzle-piece:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+
+.puzzle-piece[data-piece="1"] { background-position: 0 0; }
+.puzzle-piece[data-piece="2"] { background-position: -80px 0; }
+.puzzle-piece[data-piece="3"] { background-position: 0 -80px; }
+.puzzle-piece[data-piece="4"] { background-position: -80px -80px; }
+
+.puzzle-slot.hover {
+    background-color: #333;
+    border-color: #ffaa00;
+}
+
+.puzzle-slot.solved {
+    border-color: #4CAF50;
+    border-style: solid;
+}
+
+
+/* --- STYLE DLA PÓL NA NICK (wspólne) --- */
 .nick-input-wrapper {
     position: relative;
 }
