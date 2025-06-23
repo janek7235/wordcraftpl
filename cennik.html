@@ -34,14 +34,13 @@
         </div>
     </main>
     
-    <!-- === OKNO MODALNE (Z PUZZLAMI Z OBRAZKA) === -->
+    <!-- === OKNO MODALNE === -->
     <div id="paymentModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-modal">×</span>
             <h2>Kupujesz rangę: <span id="modalRankName"></span></h2>
             <div class="modal-price">Cena: <span id="modalRankPrice"></span></div>
 
-            <!-- Układanka z obrazka -->
             <div id="image-puzzle-container">
                 <p>Ułóż obrazek, przeciągając kawałki w odpowiednie miejsca.</p>
                 <div id="puzzle-board">
@@ -51,10 +50,11 @@
                     <div class="puzzle-slot" data-slot="4"></div>
                 </div>
                 <div id="puzzle-pieces">
-                    <div class="puzzle-piece" data-piece="1" draggable="true"></div>
-                    <div class="puzzle-piece" data-piece="2" draggable="true"></div>
-                    <div class="puzzle-piece" data-piece="3" draggable="true"></div>
-                    <div class="puzzle-piece" data-piece="4" draggable="true"></div>
+                    <!-- Każdy kawałek to teraz osobny element! -->
+                    <div class="puzzle-piece piece1" data-piece="1" draggable="true"></div>
+                    <div class="puzzle-piece piece2" data-piece="2" draggable="true"></div>
+                    <div class="puzzle-piece piece3" data-piece="3" draggable="true"></div>
+                    <div class="puzzle-piece piece4" data-piece="4" draggable="true"></div>
                 </div>
             </div>
 
@@ -70,8 +70,8 @@
 
 
 <script>
+// Logika JAVASCRIPT POZOSTAJE BEZ ZMIAN! Nadal będzie działać poprawnie.
 document.addEventListener('DOMContentLoaded', () => {
-    // === STAŁE ELEMENTY ===
     const modal = document.getElementById('paymentModal');
     const openModalButtons = document.querySelectorAll('.open-modal-button');
     const closeModalButton = document.querySelector('.close-modal');
@@ -81,15 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const nickInputDC = document.getElementById('discordNickInputModal');
     const modalPayPalButton = document.getElementById('modalPayPalButton');
     const webhookUrl = "https://discord.com/api/webhooks/1386252782649999410/SbwZySOcJL_yK-adPmzdfD1IM6NBxuroQZrfWaoq_3zJhP2xpCfiv5HL_auH1FhX3Wjv";
-    
-    // === ELEMENTY PUZZLI ===
     const slots = document.querySelectorAll('.puzzle-slot');
     const piecesContainer = document.getElementById('puzzle-pieces');
     const pieces = piecesContainer.querySelectorAll('.puzzle-piece');
     let draggedPiece = null;
     let solvedPieces = 0;
-    
-    // --- LOGIKA MODALNA ---
+
     const openModal = (rankName, rankPrice, payPalLink) => {
         modalRankName.textContent = rankName;
         modalRankPrice.textContent = rankPrice;
@@ -106,43 +103,33 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalButton.addEventListener('click', closeModal);
     window.addEventListener('click', e => { if (e.target == modal) closeModal(); });
 
-    // --- LOGIKA UKŁADANKI Z OBRAZKA ---
     const resetCaptcha = () => {
         solvedPieces = 0;
         modalPayPalButton.setAttribute('disabled', true);
         modalPayPalButton.style.opacity = '0.5';
         modalPayPalButton.style.cursor = 'not-allowed';
-
         slots.forEach(slot => {
             slot.classList.remove('solved');
             if (slot.firstChild) {
                 piecesContainer.appendChild(slot.firstChild);
             }
         });
-        
-        // LOSOWE MIESZANIE KAWAŁKÓW
         Array.from(pieces).sort(() => Math.random() - 0.5).forEach(piece => piecesContainer.appendChild(piece));
     };
-
     pieces.forEach(piece => {
         piece.addEventListener('dragstart', e => { draggedPiece = e.target; });
     });
-
     slots.forEach(slot => {
         slot.addEventListener('dragover', e => { e.preventDefault(); if (!slot.firstChild) slot.classList.add('hover'); });
         slot.addEventListener('dragleave', e => slot.classList.remove('hover'));
         slot.addEventListener('drop', e => {
             e.preventDefault();
             slot.classList.remove('hover');
-
             if (draggedPiece && !slot.firstChild && slot.dataset.slot === draggedPiece.dataset.piece) {
-                // POPRAWNY RUCH
                 slot.appendChild(draggedPiece);
                 slot.classList.add('solved');
                 solvedPieces++;
-
                 if (solvedPieces === pieces.length) {
-                    // UKŁADANKA ROZWIĄZANA!
                     modalPayPalButton.removeAttribute('disabled');
                     modalPayPalButton.style.opacity = '1';
                     modalPayPalButton.style.cursor = 'pointer';
@@ -151,8 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
             draggedPiece = null;
         });
     });
-
-    // --- LOGIKA PRZYCISKU PAYPAL ---
     modalPayPalButton.addEventListener('click', e => {
         e.preventDefault();
         if (solvedPieces !== pieces.length) { alert("Musisz najpierw ułożyć puzzle!"); return; }
@@ -164,9 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal();
         window.open(e.currentTarget.href, '_blank');
     });
-
 });
 </script>
-
 </body>
 </html>
